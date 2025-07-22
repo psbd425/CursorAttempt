@@ -1,0 +1,1 @@
+This is good start. I see that the number and the ticks are not placed properly. Make sure that the ticks are close to the circumference of the circle, feel free to use 'dots' instead of 'ticks'. Then the number should be close to the dot such that each number is equally placed with respect to its respective dot.

@@ -1,0 +1,398 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+section {
+    margin-bottom: 28px;
+}
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+input, select, button {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+button {
+    background: #0078d7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #005fa3;
+}
+#people-clocks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.person-clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 18px 10px 14px 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    min-width: 180px;
+    max-width: 220px;
+    min-height: 260px;
+    max-height: 260px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    margin: 0 auto;
+}
+.person-clock.busy {
+    background: #ffeaea;
+    border-color: #ffb3b3;
+}
+.person-clock.available {
+    background: #eaffea;
+    border-color: #b3ffb3;
+}
+.person-clock.selected {
+    border: 2.5px solid #0078d7;
+    box-shadow: 0 0 0 4px #e3f0ff;
+    background: #f0f8ff;
+}
+.person-info {
+    display: flex;
+    flex-direction: column;
+}
+.person-name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.person-country {
+    font-size: 0.95em;
+    color: #555;
+}
+.clock-time {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+}
+.status {
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+.status.busy {
+    color: #a80000;
+}
+.status.available {
+    color: #008000;
+}
+.busy-slot-slider-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+.busy-slot-slider-group label {
+    font-weight: 500;
+    margin-right: 6px;
+}
+.busy-slot-slider-group input[type=range] {
+    width: 120px;
+}
+.busy-slot-slider-group span {
+    min-width: 48px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+.two-column-layout {
+    display: flex;
+    gap: 0;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+.input-column, .display-column {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.input-column {
+    align-items: stretch;
+}
+.display-column {
+    align-items: stretch;
+}
+.divider {
+    width: 1px;
+    background: linear-gradient(to bottom, #e0e0e0 0%, #f4f4f4 100%);
+    opacity: 0.7;
+}
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    justify-items: center;
+    align-items: center;
+    min-height: 300px;
+    padding: 24px 0;
+}
+.section-header {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-top: 0;
+    letter-spacing: 0.01em;
+}
+.input-column, .display-column {
+    position: relative;
+}
+.input-column .section-header,
+.display-column .section-header {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.analog-clock {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: #eaffea;
+    border: 3px solid #b3ffb3;
+    position: relative;
+    margin: 0 auto 8px auto;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, border-color 0.3s;
+}
+.analog-clock.busy {
+    background: #ffeaea;
+    border-color: #ffb3b3;
+}
+.analog-clock.available {
+    background: #eaffea;
+    border-color: #b3ffb3;
+}
+.analog-clock.user-local {
+    background: #fffbe6;
+    border-color: #ffe066;
+}
+#user-analog-clock {
+    margin-left: 0;
+    margin-right: auto;
+    display: block;
+    width: 125px;
+    height: 125px;
+    min-width: 125px;
+    min-height: 125px;
+    margin-bottom: 0;
+}
+#user-analog-clock .clock-face {
+    width: 110px;
+    height: 110px;
+    box-shadow: 0 0 0 6px #fffbe6, 0 0 0 12px #ffe066;
+}
+.clock-face {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    background: #fff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px #f4f4f4, 0 0 0 8px #e0e0e0;
+}
+.clock-hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 100%;
+    background: #222;
+    border-radius: 2px;
+}
+.hand-hour {
+    width: 4px;
+    height: 22px;
+    background: #222;
+    z-index: 3;
+}
+.hand-minute {
+    width: 3px;
+    height: 30px;
+    background: #444;
+    z-index: 2;
+}
+.hand-second {
+    width: 2px;
+    height: 34px;
+    background: #e53935;
+    z-index: 4;
+}
+.clock-center-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: #222;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.clock-hour-tick {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    background: #bbb;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    z-index: 0;
+    margin-left: -3.5px;
+    margin-top: -3.5px;
+}
+.clock-hour-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 0.82em;
+    color: #888;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    transform: translate(-50%, -50%);
+}
+#add-person-section {
+    margin: 0;
+    padding: 0;
+}
+#user-time-section {
+    margin: 0;
+    padding: 0;
+}
+#user-time-section .section-header {
+    margin-bottom: 4px;
+}
+.people-filter-form {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 1.08em;
+    padding-left: 4px;
+}
+.people-filter-form label {
+    cursor: pointer;
+    font-weight: 500;
+}
+.people-filter-form input[type="radio"] {
+    margin-right: 4px;
+}
+@media (max-width: 900px) {
+    .two-column-layout {
+        flex-direction: column;
+    }
+    .divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, #e0e0e0 0%, #f4f4f4 100%);
+    }
+    .input-column, .display-column {
+        padding: 24px 10px;
+    }
+    .people-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+@media (min-width: 900px) {
+    .two-column-layout {
+        align-items: flex-start;
+    }
+    .input-column, .display-column {
+        justify-content: flex-start;
+    }
+    .input-column .section-header,
+    .display-column .section-header {
+        min-height: 1.5em;
+        display: flex;
+        align-items: flex-start;
+    }
+} 
+.container.two-column-layout {
+    width: 950px;
+    height: 600px;
+    min-width: 950px;
+    min-height: 600px;
+    max-width: 950px;
+    max-height: 600px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    gap: 0;
+}
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    gap: 18px;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.person-clock {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: min-width 0.2s, max-width 0.2s, min-height 0.2s, max-height 0.2s;
+    padding: 8px 4px;
+}
+@media (max-width: 1000px) {
+    .container.two-column-layout {
+        width: 100vw;
+        min-width: 0;
+        max-width: 100vw;
+        height: 100vh;
+        min-height: 0;
+        max-height: 100vh;
+    }
+} 
