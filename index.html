@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Availability Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align:center; margin-top:32px; margin-bottom:16px;">People Availability Tracker</h1>
+    <div class="container two-column-layout">
+        <div class="input-column">
+            <section id="user-time-section">
+                <h2 class="section-header">Your Local Time</h2>
+                <div id="user-analog-clock" class="analog-clock user-local"></div>
+            </section>
+            <section id="add-person-section">
+                <h2 class="section-header">Add Person</h2>
+                <form id="add-person-form">
+                    <input type="text" id="person-name" placeholder="Name" required>
+                    <select id="person-country" required></select>
+                    <div class="busy-slot-slider-group">
+                        <label>Busy Slot:</label>
+                        <input type="range" id="busy-start-slider" min="0" max="1430" step="30" value="540">
+                        <span id="busy-start-label">09:00</span>
+                        <span>to</span>
+                        <input type="range" id="busy-end-slider" min="30" max="1440" step="30" value="1020">
+                        <span id="busy-end-label">17:00</span>
+                    </div>
+                    <button type="submit">Add Person</button>
+                </form>
+                <div id="edit-busy-section" style="display:none; margin-top: 18px;">
+                    <h3 id="edit-busy-title"></h3>
+                    <ul id="edit-busy-list"></ul>
+                    <div class="busy-slot-slider-group">
+                        <label>Add Busy Slot:</label>
+                        <input type="range" id="edit-busy-start-slider" min="0" max="1430" step="30" value="540">
+                        <span id="edit-busy-start-label">09:00</span>
+                        <span>to</span>
+                        <input type="range" id="edit-busy-end-slider" min="30" max="1440" step="30" value="1020">
+                        <span id="edit-busy-end-label">17:00</span>
+                        <button id="edit-busy-add-btn" type="button">+</button>
+                    </div>
+                    <button id="edit-busy-done-btn" type="button" style="margin-top: 10px;">Done</button>
+                </div>
+            </section>
+        </div>
+        <div class="divider"></div>
+        <div class="display-column">
+            <section id="filter-section">
+                <form id="people-filter-form" class="people-filter-form">
+                    <label><input type="radio" name="people-filter" value="all" checked> All</label>
+                    <label><input type="radio" name="people-filter" value="available"> Available</label>
+                    <label><input type="radio" name="people-filter" value="busy"> Busy</label>
+                </form>
+            </section>
+            <section id="people-clocks-section">
+                <h2 class="section-header">People Clocks</h2>
+                <div id="people-clocks" class="people-grid"></div>
+            </section>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
