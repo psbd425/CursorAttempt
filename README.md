@@ -1,5 +1,9 @@
 # Patient Medical Survey
 
+![App Screenshot](./screenshot.png)
+
+*Screenshot: Patient Medical Survey web app UI*
+
 ## Project Structure
 - Backend: Node.js/Express (serves API and React frontend)
 - Frontend: React (Material-UI, TreeView, Modal, Form)
