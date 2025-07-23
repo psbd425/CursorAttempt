@@ -92,12 +92,11 @@ app.get('/api/patients/:hospital', (req, res) => {
   }
 });
 
-// Serve frontend (optional, for production)
-// const clientBuildPath = path.join(__dirname, 'client', 'build');
-// app.use(express.static(clientBuildPath));
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(clientBuildPath, 'index.html'));
-// });
+// Serve frontend (for production)
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Backend API server running on http://localhost:${PORT}`);
