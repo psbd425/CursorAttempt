@@ -1,1 +1,0 @@
-The addition of clock is mostly okay, but it seems the 3 hands are not placed at the center of the clock. Let's try to fix it.

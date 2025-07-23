@@ -1,1 +1,0 @@
-There are now 2 issues that have popped up. First, I want you to divide the two columns such that they both have equal horizontal space. It's okay to keep a faint divider between the two columns. Let's work on correcting this first issue first. We will then work on the secon issue once the first is fixed.

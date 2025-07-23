@@ -1,1 +1,0 @@
-I think the use of slider is looking good. But, now the listing of the 'people clock' is broken. It no longer shows the person after he/she is added. Fix it. Also, Make sure there's an opportunity for the user to add multiple busy slots. The way you have an opportunity for a user to add a busy slot is good, but also have an option to add more busy slots.

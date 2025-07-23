@@ -1,1 +1,0 @@
-This looks good. I want you to now focus on choice of ui components. Make sure you use relevant UI Component in this app. For example, It might be a good choice to use a dropdown component for choice of country. Also, think if there's a better ui component to select the busy time slot. 
